@@ -57,7 +57,11 @@ Depot::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+<<<<<<< HEAD
   root :to =>'store#index',:as=>'store'
+=======
+  root :to => 'store#index', :as => 'store'
+>>>>>>> 269940add41ee18df983bbf99d80889df5b06e0d
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

@@ -21,7 +21,11 @@ div.field, div.actions {
 }
 
 #notice {
+<<<<<<< HEAD
   color:green;
+=======
+  color: green;
+>>>>>>> 269940add41ee18df983bbf99d80889df5b06e0d
 }
 
 .field_with_errors {

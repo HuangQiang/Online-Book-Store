@@ -3,11 +3,19 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
+<<<<<<< HEAD
     @update ={
       :title=>'lorem Ipsum',
       :description =>'Wibbles are fun!',
       :image_url =>'lorem.jpg',
       :price =>19.95
+=======
+    @update = {
+      :title       => 'Lorem Ipsum',
+      :description => 'Wibbles are dun!',
+      :image_url   => 'lorem.jpg',
+      :price       => 19.95
+>>>>>>> 269940add41ee18df983bbf99d80889df5b06e0d
     }
   end
 

@@ -1,6 +1,7 @@
 <div id="product_list">
   <h1>Listing products</h1>
 
+<<<<<<< HEAD
   <table>
   <% @products.each do |product| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -26,9 +27,40 @@
       </td>
     </tr>
   <% end %>
+=======
+  	<table>
+  	<% @products.each do |product| %>
+    	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+     	 <td>
+       	 <%= image_tag(product.image_url, :class => 'list_image') %>
+      	</td>
+	
+     	 <td class="list_description">
+      		  <dl>
+          		<dt><%= product.title %></dt>
+         		 <dd><%= truncate(strip_tags(product.description),
+                 		:length => 80) %></dd>
+        	  </dl>	
+     	 </td>
+
+      	<td class="list_actions">
+       	 <%= link_to 'Show', product %><br/>
+      	 <%= link_to 'Edit', edit_product_path(product) %><br/>
+       	 <%= link_to 'Destroy', product, 
+                    	:confirm => 'Are you sure?',
+                    	:method => :delete %>
+      	</td>
+    	</tr>
+		<% end %>
+>>>>>>> 269940add41ee18df983bbf99d80889df5b06e0d
   </table>
 </div>
 
 <br />
 
+<<<<<<< HEAD
 <%= link_to 'New product', new_product_path %>
+=======
+<%= link_to 'New product', new_product_path %>
+>>>>>>> 269940add41ee18df983bbf99d80889df5b06e0d
