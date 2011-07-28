@@ -28,12 +28,13 @@
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+	
+    width: 60px;
+    height: 70px;
 }
 
 #product_list .list_description {
-  width:        60%;
+  width: 60%;
 }
 
 #product_list .list_description dl {
@@ -154,4 +155,72 @@
 {
 	color: #bfb;
 	font-size: small;
+}
+
+/* Styles for the cart in the main page*/
+#store .cart_title
+{
+	font: 120% bold;
+}
+
+#store .item_price, #store.total_line
+{
+	text-align: right;
+}
+#store .total_line .total_cell
+{
+	font-weight: bold;
+	border-top: 1px solid #595;
+}
+/* Styles for the cart in the sidebar */
+#cart, #cart table
+{
+	font-size: smaller;
+	color: white;
+}
+
+#cart table
+{
+	border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+}
+
+/* Styles for order form */
+.depot_form fieldset
+{
+	background: #efe;
+}
+
+.depot_form legend
+{
+	color: #dfd;
+	background: #141;
+	font-family: sans-serif;
+	padding: 0.2em 1em;
+}
+
+.depot_form label
+{
+	width: 5em;
+	float: left;
+	text-align: right;
+	padding-top: 0.2em;
+	margin-right: 0.1em;
+	display: block;
+}
+
+.depot_form select, .depot_form textarea, .depot_form input
+{
+	margin-left: 0.5em;
+}
+
+.depot_form .submit
+{
+	margin-left: 4em;
+}
+
+.depot_form div
+{
+	margin: 0.5em 0;
 }
