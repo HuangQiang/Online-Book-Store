@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
-  skip_before_filter :authorize, :only => :create
   # GET /line_items
   # GET /line_items.xml
   def index
@@ -43,14 +42,12 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
-    #@line_item = @cart.line_items.build(:product => product)
+    @line_item = @cart.line_items.build(:product => product)
     #@line_item = LineItem.new(params[:line_item])
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(store_url) }
-        format.js { @current_item = @line_item }
+        format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
