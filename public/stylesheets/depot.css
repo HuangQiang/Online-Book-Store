@@ -135,6 +135,7 @@
 {
 	background:#141;
 }
+
 #main
 {
 	margin-left: 13em;
@@ -172,6 +173,12 @@
 	font-weight: bold;
 	border-top: 1px solid #595;
 }
+.locale
+{
+	float: right;
+	padding-top: 0.2em;
+}
+
 /* Styles for the cart in the sidebar */
 #cart, #cart table
 {
@@ -224,3 +231,4 @@
 {
 	margin: 0.5em 0;
 }
+
