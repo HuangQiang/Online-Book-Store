@@ -7,10 +7,10 @@
     <th></th>
   </tr>
 
-<% @carts.each do |cart| %>   <!-- 对每一个cart对象执行如下操作  -->
+<% @carts.each do |cart| %>
   <tr>
-    <td><%= link_to 'Show', cart %></td>    <!-- 页面跳转到选择的cart页面，查看购物车对象 -->
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>   <!-- 页面跳转到Editing cart -->
+    <td><%= link_to 'Show', cart %></td>
+    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
     <td><%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
