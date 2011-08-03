@@ -9,6 +9,7 @@
 
 <% @carts.each do |cart| %>
   <tr>
+	<td>Cart <%= cart.id %></td>
     <td><%= link_to 'Show', cart %></td>
     <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
     <td><%= link_to 'Destroy', cart, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -17,5 +18,5 @@
 </table>
 
 <br />
-
+<%= @carts.count%>
 <%= link_to 'New Cart', new_cart_path %>

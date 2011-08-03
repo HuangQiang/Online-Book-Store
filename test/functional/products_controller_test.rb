@@ -3,12 +3,12 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-    @update = {
-      :title       => 'Lorem Ipsum',
-      :description => 'Wibbles are dun!',
-      :image_url   => 'lorem.jpg',
-      :price       => 19.95
-    }
+	@update = {
+		:title			=>	'Lorem Ipsum',
+		:description	=>	'Wibbles are fun',
+		:image_url		=> 	'lorem.jpg',
+		:price			=>	19.95
+	}
   end
 
   test "should get index" do
@@ -42,7 +42,6 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should update product" do
     put :update, :id => @product.to_param, :product => @update
-    assert_redirected_to product_path(assigns(:product))
   end
 
   test "should destroy product" do
@@ -52,4 +51,14 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+  
+	test "product is not valide without a nique title" do
+		product = Product.new(:title => products(:ruby).title,
+							:description => "yyy",
+							:price => 1,
+							:image_url => "fred.gif")
+		assert !product.save
+		assert_equal "has already been taken", product.errors[:title].join(';')
+	end
+	
 end
