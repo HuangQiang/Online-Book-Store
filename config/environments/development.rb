@@ -22,5 +22,22 @@ Depot::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  config.action_mailer.raise_delivery_errors = true #错误异常是事抛给应用程序  
+
+# set delivery method to :smtp, :sendmail or :test  
+config.action_mailer.delivery_method = :smtp # 发送邮件方式  
+
+# these options are only needed if you choose smtp delivery  
+config.action_mailer.smtp_settings = {  
+:address        => 'smtp.gmail.com',  
+:port           => 587,  
+:authentication => :plain,  
+:user_name      => 'kkingshing@gmail.com', #你的gmail帐号  
+:password       => 'aa12345678' #你的gmail密码 
+}
 end
 
+#Depot::Application.configure do
+#      config.action_mailer.delivery_method = :test
+#end
