@@ -1,6 +1,4 @@
 <div class="depot_form">
-
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -13,29 +11,24 @@
       </ul>
     </div>
   <% end %>
-  <fieldest>
-  <legend>Enter User Details</legend>
-  
-  <div>
+
+<fieldset>
+	<legend>Enter User Details</legend>
+  <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, :size => 40 %>
+    <%= f.text_field :name, :size =>40 %>
   </div>
-  
-  <div>
-    <%= f.label :password, 'Password' %>
-    <%= f.password_field :password, :size => 40 %>
+  <div class="field">
+    <%= f.label :password,'Password' %>
+    <%= f.text_field :password, :size =>40 %>
   </div>
-  
-  <div>
-    <%= f.label :password_confirmation, 'Confirm' %>
-    <%= f.password_field :password_confirmation, :size => 40 %>
+  <div class="field">
+    <%= f.label :password_confirmation,'Confirm' %>
+    <%= f.text_field :password_confirmation, :size=> 40 %>
   </div>
-  
-  <div>
+  <div class="actions">
     <%= f.submit %>
   </div>
-  
-  <fieldset>
+ </fieldset>
 <% end %>
-
 </div>
