@@ -10,6 +10,10 @@ Depot::Application.routes.draw do
   end
   
   scope '(:locale)' do
+  
+  #add the route of function search
+  match 'products/search' => 'products#search'
+  
   resources :users
 
   resources :orders
@@ -20,6 +24,7 @@ Depot::Application.routes.draw do
 
   resources :products do
      get :who_bought, :on => :member
+	 
   end
   
 

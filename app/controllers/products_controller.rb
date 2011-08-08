@@ -1,4 +1,32 @@
 class ProductsController < ApplicationController
+ 
+  
+  #
+  #
+  def search
+	
+	if(params[:search_string])
+		#split key words
+		@key_words=params[:search_string].split(' ').uniq	
+		
+		#search by each key word
+		for key_word in @key_words do
+			if @products
+				@products = @products + Product.find_by_sql("select * from products where title like '%"+key_word+"%'"+" or description like '%"+key_word+"%'")
+			else
+				@products = Product.find_by_sql("select * from products where title like '%"+key_word+"%'"+" or description like '%"+key_word+"%'")
+			end
+		end	
+		@products.uniq!
+	end
+	
+	 respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @products }
+	end
+  end 
+  
+  
   # GET /products
   # GET /products.xml
   def index
