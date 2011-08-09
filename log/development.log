@@ -24557,3 +24557,1222 @@ Started POST "/products/search" for 127.0.0.1 at Mon Aug 08 15:52:09 +0800 2011
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37231308_0 at E:/myapp/try/app/views/products/search.html.erb:4)
 Rendered products/search.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Aug 09 10:33:06 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "carts" ("updated_at", "created_at") VALUES ('2011-08-09 02:33:07.546875', '2011-08-09 02:33:07.546875')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (312.5ms)
+Completed 200 OK in 734ms (Views: 343.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/product" for 127.0.0.1 at Tue Aug 09 10:33:13 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"product"}
+product translation not available
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 125ms (Views: 78.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at Tue Aug 09 10:33:18 +0800 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Redirected to http://localhost:3000/login?locale=en
+Completed 302 Found in 78ms
+
+
+Started GET "/login?locale=en" for 127.0.0.1 at Tue Aug 09 10:33:18 +0800 2011
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?locale=en" for 127.0.0.1 at Tue Aug 09 10:35:37 +0800 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"kiluya", "commit"=>"Login", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓", "locale"=>"en", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'kiluya' LIMIT 1[0m
+Redirected to http://localhost:3000/admin?locale=en
+Completed 302 Found in 47ms
+
+
+Started GET "/admin?locale=en" for 127.0.0.1 at Tue Aug 09 10:35:37 +0800 2011
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered admin/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 172ms (Views: 109.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 10:35:51 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37647804_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 10:35:55 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  select * from products where title like '%web%' or description like '%web%'
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36886728_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 109ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Tue Aug 09 11:04:00 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Tue Aug 09 11:04:00 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 172ms (Views: 125.0ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/es" for 127.0.0.1 at Tue Aug 09 11:04:06 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓", "locale"=>"es"}
+Redirected to http://localhost:3000/en
+Completed 302 Found in 0ms
+
+
+Started GET "/en" for 127.0.0.1 at Tue Aug 09 11:04:06 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (15.6ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 109.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 11:04:17 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 125ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Tue Aug 09 11:04:20 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"es", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/es
+Completed 302 Found in 0ms
+
+
+Started GET "/es" for 127.0.0.1 at Tue Aug 09 11:04:20 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"es"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 125ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Tue Aug 09 11:04:29 +0800 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 94ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:04:35 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36889656_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 78ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:04:38 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  select * from products where title like '%web%' or description like '%web%'
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37361232_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:08:20 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed   in 78ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:08:57 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37304124_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:09:21 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed   in 16ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:09:45 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37746300_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (31.2ms)
+Completed   in 62ms
+
+ActionView::Template::Error (undefined local variable or method `i' for #<#<Class:0x4801350>:0x47fff70>):
+    12: 		<p><%= word %></p>
+    13: 	<% end %>
+    14: <%end%>
+    15: <%= i.to_s %>
+    16: <% if @products%>
+    17: 	<% @products.each do |product| %>
+    18: 		<div class="entry">
+  app/views/products/search.html.erb:15:in `_app_views_products_search_html_erb__819808809_37746300_0'
+  app/controllers/products_controller.rb:23:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:10:06 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36935136_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:10:09 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"d", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mselect * from products where title like '%d%' or description like '%d%'[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37814136_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 156ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:10:45 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 16ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:10:53 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_38078256_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:10:59 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 31ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:11:26 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36659640_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:11:29 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 16ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:00 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36958824_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:02 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 16ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:24 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37124424_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:25 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 31ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (78.1ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (93.8ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:44 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37657884_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:12:45 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed   in 16ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.uniq!):
+  app/controllers/products_controller.rb:20:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:02 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37373772_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 125ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:04 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37382040_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:06 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36798312_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:08 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (15.6ms)[0m  [1mselect * from products where title like '%web%' or description like '%web%'[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37241820_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 78ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:32 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (15.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37849920_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:14:33 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37179612_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:22:12 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_38022072_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:22:14 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37293564_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:22:32 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+ERROR: compiling _app_views_products_search_html_erb__819808809_38107008_0 RAISED compile error
+E:/myapp/try/app/views/products/search.html.erb:17: syntax error, unexpected '<'
+...>');@output_buffer.append= ( <@i> );@output_buffer.safe_conc...
+                              ^
+E:/myapp/try/app/views/products/search.html.erb:18: syntax error, unexpected kEND, expecting ')'
+E:/myapp/try/app/views/products/search.html.erb:34: syntax error, unexpected kENSURE, expecting ')'
+E:/myapp/try/app/views/products/search.html.erb:36: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_products_search_html_erb__819808809_38107008_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "products/search";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Results of Search: </h1>
+
+<span style="text-align: right">
+');@output_buffer.append_if_string=    form_tag "/products/search" do 
+@output_buffer.safe_concat('    ');@output_buffer.append= ( text_field_tag :search_string );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( submit_tag "Search" );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('</span>
+
+');if @key_words!=nil
+	 for word in @key_words 
+@output_buffer.safe_concat('		<p>');@output_buffer.append= ( word );@output_buffer.safe_concat('</p>
+');	 end 
+end
+@output_buffer.safe_concat('
+');if @i
+@output_buffer.safe_concat('<p>');@output_buffer.append= ( <@i> );@output_buffer.safe_concat('</p>
+');end
+@output_buffer.safe_concat('
+'); if @products
+@output_buffer.append_if_string= 	 @products.each do |product| 
+@output_buffer.safe_concat('		<div class="entry">
+		');@output_buffer.append= ( image_tag(product.image_url) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		<h3><font color=red>');@output_buffer.append= ( product.title );@output_buffer.safe_concat('</font></h3>
+		');@output_buffer.append= (sanitize product.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		<div class="price_line">
+		<span class="price">');@output_buffer.append= ( number_to_currency(product.price) );@output_buffer.safe_concat('</span> 
+		');@output_buffer.append= ( button_to 'Add to cart', line_items_path(:product_id => product),
+		:remote => true );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		</div>
+	</div>
+'); end 
+ end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: E:/myapp/try/app/views/products/search.html.erb:36:in `compile'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+E:/myapp/try/app/controllers/products_controller.rb:26:in `search'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:446:in `_run__1029162686__process_action__413836642__callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed   in 109ms
+
+ActionView::Template::Error (compile error
+E:/myapp/try/app/views/products/search.html.erb:17: syntax error, unexpected '<'
+...>');@output_buffer.append= ( <@i> );@output_buffer.safe_conc...
+                              ^
+E:/myapp/try/app/views/products/search.html.erb:18: syntax error, unexpected kEND, expecting ')'
+E:/myapp/try/app/views/products/search.html.erb:34: syntax error, unexpected kENSURE, expecting ')'
+E:/myapp/try/app/views/products/search.html.erb:36: syntax error, unexpected kEND, expecting ')'):
+    14: <%end%>
+    15: 
+    16: <%if @i%>
+    17: <p><%= <@i> %></p>
+    18: <%end%>
+    19: 
+    20: <% if @products%>
+  app/views/products/search.html.erb:36:in `compile'
+  app/controllers/products_controller.rb:26:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:31:33 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37204464_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:31:45 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36533700_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:32:27 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37494456_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:35:23 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36842628_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:35:29 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  select * from products where title like '%web%' or description like '%web%'
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37356228_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 94ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:41:27 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_38065236_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 11:41:31 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mselect * from products where title like '%web%' or description like '%web%'[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37167588_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:02:55 +0800 2011
+  Processing by ProductsController#show as 
+  Parameters: {"id"=>"Manual_for_Administrator"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 0 ORDER BY title LIMIT 1[0m
+Completed   in 250ms
+
+ActiveRecord::RecordNotFound (Couldn't find Product with ID=Manual_for_Administrator):
+  app/controllers/products_controller.rb:47:in `show'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.2ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 14:03:51 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+ERROR: compiling _app_views_products_search_html_erb__819808809_36909408_0 RAISED compile error
+E:/myapp/try/app/views/products/search.html.erb:35: syntax error, unexpected kENSURE, expecting kEND
+E:/myapp/try/app/views/products/search.html.erb:37: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_products_search_html_erb__819808809_36909408_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "products/search";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Results of Search: </h1>
+
+<span style="text-align: right">
+');@output_buffer.append_if_string=    form_tag "/products/search" do 
+@output_buffer.safe_concat('    ');@output_buffer.append= ( text_field_tag :search_string );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( submit_tag "Search" );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('</span>
+
+');if @key_words!=nil
+	 for word in @key_words 
+@output_buffer.safe_concat('		<p>');@output_buffer.append= ( word );@output_buffer.safe_concat('</p>
+');	 end 
+end
+@output_buffer.safe_concat('
+
+'); if @products
+@output_buffer.append_if_string= 	 @products.each do |product| 
+@output_buffer.safe_concat('		<div class="entry">
+		');@output_buffer.append= ( image_tag(product.image_url) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		
+');		 for word in @key_words 
+@output_buffer.safe_concat('			<>
+		<h3>');@output_buffer.append= ( product.title );@output_buffer.safe_concat('</h3>
+		
+		');@output_buffer.append= (sanitize product.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		<div class="price_line">
+		<span class="price">');@output_buffer.append= ( number_to_currency(product.price) );@output_buffer.safe_concat('</span> 
+		');@output_buffer.append= ( button_to 'Add to cart', line_items_path(:product_id => product),
+		:remote => true );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		</div>
+	</div>
+'); end 
+ end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: E:/myapp/try/app/views/products/search.html.erb:37:in `compile'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+E:/myapp/try/app/controllers/products_controller.rb:26:in `search'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:446:in `_run__1029162686__process_action__413836642__callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `action'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+C:/Ruby187/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+C:/Ruby187/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered products/search.html.erb within layouts/application (31.2ms)
+Completed   in 78ms
+
+ActionView::Template::Error (compile error
+E:/myapp/try/app/views/products/search.html.erb:35: syntax error, unexpected kENSURE, expecting kEND
+E:/myapp/try/app/views/products/search.html.erb:37: syntax error, unexpected $end, expecting kEND):
+    32: 	</div>
+    33: <% end %>
+    34: <% end %>
+  app/views/products/search.html.erb:37:in `compile'
+  app/controllers/products_controller.rb:26:in `search'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.9ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 14:04:11 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_36238044_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 234ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:04:13 +0800 2011
+  Processing by ProductsController#show as 
+  Parameters: {"id"=>"Manual_for_Administrator"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 0 ORDER BY title LIMIT 1[0m
+Completed   in 31ms
+
+ActiveRecord::RecordNotFound (Couldn't find Product with ID=Manual_for_Administrator):
+  app/controllers/products_controller.rb:47:in `show'
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Aug 09 14:06:45 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 219ms (Views: 187.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:07:09 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (15.6ms)[0m  SELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered orders/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 172ms (Views: 125.0ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/en/users" for 127.0.0.1 at Tue Aug 09 14:07:12 +0800 2011
+  Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY name[0m
+Rendered users/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 78ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:07:44 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 188ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:07:48 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:08:40 +0800 2011
+
+ArgumentError (missing :action):
+  config/routes.rb:5
+  config/routes.rb:1
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/en/" for 127.0.0.1 at Tue Aug 09 14:08:45 +0800 2011
+
+ActionController::RoutingError (No route matches "/en"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/" for 127.0.0.1 at Tue Aug 09 14:09:06 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 266ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:09:58 +0800 2011
+
+ArgumentError (missing :action):
+  config/routes.rb:5
+  config/routes.rb:1
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:11:31 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Aug 09 14:11:36 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 94ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Tue Aug 09 14:11:43 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 124 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 124)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+Rendered store/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 109ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 14:11:53 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 250ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:11:55 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:13:10 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:13:26 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:14:01 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 14:14:03 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 172ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 14:14:26 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/public/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:14:27 +0800 2011
+
+ActionController::RoutingError (No route matches "/public/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 14:14:36 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 141ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/public/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:14:37 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/public/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/public/Manual_for_Administrator.htm" for 127.0.0.1 at Tue Aug 09 14:14:48 +0800 2011
+
+ActionController::RoutingError (No route matches "/en/public/Manual_for_Administrator.htm"):
+  
+
+Rendered C:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/en/products" for 127.0.0.1 at Tue Aug 09 14:14:52 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 188ms (Views: 156.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:14:56 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 156ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:15:11 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+Rendered orders/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 94ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:16:26 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "orders"
+Rendered orders/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 94ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/orders" for 127.0.0.1 at Tue Aug 09 14:18:37 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOrder Load (0.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb__807829849_37795740_0 at E:/myapp/try/app/views/layouts/application.html.erb:28)
+Rendered orders/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 109ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 14:18:45 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mselect * from products where title like '%web%' or description like '%web%'[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_38009256_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb__807829849_38007684_0 at E:/myapp/try/app/views/layouts/application.html.erb:28)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 141ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 14:19:05 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web ds ", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mselect * from products where title like '%web%' or description like '%web%'[0m
+  [1m[35mProduct Load (0.0ms)[0m  select * from products where title like '%ds%' or description like '%ds%'
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb__807829849_37020912_0 at E:/myapp/try/app/views/layouts/application.html.erb:28)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/search" for 127.0.0.1 at Tue Aug 09 14:19:27 +0800 2011
+  Processing by ProductsController#search as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37737996_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 14:19:30 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37022532_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Tue Aug 09 14:19:33 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"web", "authenticity_token"=>"X8hDXnLH7SxfblQyx6d/BvN3qLjBQW810uie3Tc4miI=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  select * from products where title like '%web%' or description like '%web%'
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_products_search_html_erb__819808809_37574064_0 at E:/myapp/try/app/views/products/search.html.erb:4)
+Rendered products/search.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 78ms (Views: 31.2ms | ActiveRecord: 0.0ms)

@@ -1,8 +1,8 @@
 Depot::Application.routes.draw do
-	#match 'help' => 'public/404.html'
+	
 
   get 'admin' => 'admin#index'
-  
+    
   controller :sessions do
     get 'login'  => :new
 	post 'login' => :create

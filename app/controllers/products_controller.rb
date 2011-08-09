@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 	
 	if(params[:search_string])
 		#split key words
-		@key_words=params[:search_string].split(' ').uniq	
+		@key_words=params[:search_string].split.uniq	
 		
 		#search by each key word
 		for key_word in @key_words do
@@ -17,9 +17,12 @@ class ProductsController < ApplicationController
 				@products = Product.find_by_sql("select * from products where title like '%"+key_word+"%'"+" or description like '%"+key_word+"%'")
 			end
 		end	
-		@products.uniq!
+		
 	end
 	
+	if @products
+		@products.uniq!
+	end
 	 respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }

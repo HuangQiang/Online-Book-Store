@@ -23,6 +23,8 @@
 		  <% end %>
 		    <%= image_tag("logo.png") %>
 			<%= @page_title || t('.title') %>
+			
+			
 		</div>
 		<div id="columns">
 			<div id="side">
@@ -37,8 +39,8 @@
 				<a href="http://www..../news"><%= t('.news') %></a><br />
 				<a href="http://www..../contact"><%= t('.contact') %></a><br />
 				<br/>
-				<a href="Manual_for_Administrator.htm">Manual for Administrator</a><br>
-				<a href="Manual_for_User.htm">Manual for User</a><br>
+				<a href="/Manual_for_Administrator.htm" target="_blank">Manual for Administrator</a><br>
+				<a href="/Manual_for_User.htm" target="_blank">Manual for User</a><br>
 				<% if session[:user_id] %>
 				 <br />
 				 <%= link_to 'Orders',    orders_path   %><br />
