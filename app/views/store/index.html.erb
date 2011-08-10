@@ -1,15 +1,30 @@
+
+<h1><%= image_tag("good.jpg")%> Acquisition list</h1>
+<div class="entry">
+<marquee>
+<% @products.each do |product| %>
+	<div class="photo"><%= image_tag(product.image_url) %></div>
+<%  end %>
+</marquee>
+</div>
+
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1><%= t(".title_html").html_safe %></h1>
+
+<h1><%= t('.title_html').html_safe %></h1>
+
 
 <% @products.each do |product| %>
   <div class="entry">
-	<%= image_tag(product.image_url) %>
+	<%= link_to image_tag(product.image_url),  url_for(:controller => "products", :action => "show", :id => product.id) %>
+
 	<h3>
 	<%= link_to "#{product.title}", url_for(:controller => "products", :action => "show", :id => product.id) %>
 	<% product.title %></h3>
+
 	<%=sanitize product.description %>
 	<div class="price_line">
 	<span class="price"><%= number_to_currency(product.price) %></span> 
@@ -18,6 +33,8 @@
 	  
 	 </div>
   </div>
+
 <% end %>
 <br />
 <%= will_paginate @products %>
+

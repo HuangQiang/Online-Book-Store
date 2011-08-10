@@ -22,6 +22,19 @@ en:
       news:       "News"
       contact:    "Contact"
 
+      Logout:     "Logout"
+      login:      "Login"
+      register:   "Register"
+      newShop:    "NewShop"
+      Welcome:    "Welcome"
+      Orders:     "Orders"
+      Products:   "Products"
+      Users:      "Users"
+      Search:     "Search"
+      Manual_for_Administrator:   "Manual for Administrator"
+      Manual_for_User:            "Manual for User"
+
+
   store:
     index:
       title_html:   "Your Pragmatic Catalog"
@@ -31,6 +44,13 @@ en:
       title:      "Your Cart"
       empty:      "Empty Cart"
       checkout:   "Checkout"
+
+      confirm:    "Are you sure"
+    show:
+      Empty_cart: "Empty cart"
+      confirm:    "Are you sure"
+      
+
       
   number:
     currency:
@@ -51,6 +71,71 @@ en:
       pay_type:     "Pay with"
       pay_prompt:   "Select a payment method"
       submit:       "Place Order"
+
+    index:
+      ListOrder:      "Order List"
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Pay_type:       "Pay Type"
+      Show:           "Show"
+      Edit:           "Edit"
+      Destroy:        "Destroy"
+      New_Order:      "New Order"
+      confirm:        "Are you sure?"
+    show:
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Edit:           "Edit"
+      Back:           "Back"
+      Pay_type:       "Pay type"
+    edit:
+      Editing_order:  "Editing order"
+      Show:           "Show"
+      Back:           "Back"
+
+  products:
+    index:
+      Listing_products: "Listing products"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_product:      "New product"
+    show:
+      Title:            "Title"
+      Description:      "Description"
+      Image_url:        "Image url"
+      Price:            "Price"
+      Edit:             "Edit"
+      Back:             "Back"
+    edit:
+      Editing_product:  "Editing product"
+      Show:             "Show"
+      Back:             "Back"
+    search:
+      result:           "Results of Search"
+      Add_to_cart:      "Add to cart"
+    new:
+      New_product:      "New product"
+      Back:             "Back"
+
+
+  users:
+    index:
+      Listing_users:    "Listing users"
+      Name:             "Name"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_User:         "New User"
+    new:
+      New_user:         "New user"
+      Back:             "Back"
+
+
 
   sessions:
     new:

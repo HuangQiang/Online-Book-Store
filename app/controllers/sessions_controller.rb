@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate(params[:name], params[:password])
+
 	  session[:user_name] = user.name
+
 	  redirect_to admin_url
 	else
 	  redirect_to login_url, :alert => "Invalid user/password combination"
@@ -14,8 +16,10 @@ class SessionsController < ApplicationController
 
 
   def destroy
+
     session[:user_name] = nil
 	redirect_to store_url, :notice => 'Logged out'
+
   end
 
 end

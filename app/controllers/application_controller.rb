@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
+
   skip_before_filter :authorize
+
   protect_from_forgery
   
   private
@@ -16,6 +18,7 @@ class ApplicationController < ActionController::Base
 	protected
 	
 	  def authorize
+
 	   if User.find_by_name(session[:user_name]) == nil
 		   redirect_to login_url, :notice => "Please log in"
 	  
@@ -25,6 +28,7 @@ class ApplicationController < ActionController::Base
 		   #else
 		    #redirect_to login_url, :notice => "Please log in"
 			#@current_user = User.find_by_id(session[:user_id])
+
 		end
 	  end
 	  
