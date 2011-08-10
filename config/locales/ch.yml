@@ -1,0 +1,77 @@
+
+ch:
+
+  layouts:
+    application:
+      title:     "网上书城"
+      home:      "主          页"
+      question:  "问          题"
+      news:      "新闻中心"
+      contact:   "联系我们"
+      Logout:    "登出"
+
+  store:
+    index:
+      title_html:  "书籍列表"
+      add:         "加入购物车"
+
+  carts:
+    cart:
+      title:       "购物车"
+      empty:       "清空购物车"
+      checkout:    "进入结算中心"
+      Total:       "总计"
+
+  number:
+    currency:
+      format:
+        unit:       "￥"
+        precision:  2
+        separator:  "."
+        delimiter:  ","
+        format:     "%u%n"
+
+  orders:
+    new:
+      legend:       "请输入您的信息"
+    form:
+      name:         "姓名"
+      address:      "地址"
+      email:        "邮箱地址"
+      pay_type:     "付款方式"
+      pay_prompt:   "选择付款方式"
+      submit:       "提交订单"
+      checkout:     "dd"
+      
+
+  sessions:
+    new:
+      login:        "欢迎登陆"
+      submit:        "登陆"
+      Name:         "用户名"
+      Password:     "密码" 
+
+
+  activerecord:
+    errors:
+      messages:
+        inclusion:  "列表中不存在"
+        blank:      "不能为空"
+  errors:
+    template:
+      body:         "存在以下问题"
+      header:
+        one:        "订单保存时出现一个错误"
+        other:      "订单保存时出现%{count}个错误"
+
+  activerecord:
+    models:
+      order:        "订单"
+    attributes:
+      order:
+        address:    "地址"
+        name:       "姓名"
+        email:      "邮件地址"
+        pay_type:   "付款方式"
+
+  thanks:           "您好!感谢您的订购!"    
