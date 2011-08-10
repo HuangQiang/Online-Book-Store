@@ -16,6 +16,10 @@ ch:
       Orders:    "查看订单"
       Products:  "查看商品"
       Users:     "查看用户"
+      Search:    "搜索"
+      Manual_for_Administrator:   "管理员手册"
+      Manual_for_User:            "用户手册"
+
 
   store:
     index:
@@ -28,6 +32,10 @@ ch:
       empty:       "清空购物车"
       checkout:    "进入结算中心"
       Total:       "总计"
+      confirm:     "确定清空购物车"
+    show:
+      Empty_cart:  "清空购物车"
+      confirm:     "确定清空购物车"
 
   number:
     currency:
@@ -91,8 +99,14 @@ ch:
       Editing_product:   "编辑商品"
       Show:              "查看详情"
       Back:              "返回"      
-    _form:
-      title:             "名称"
+    search:
+      result:            "搜索结果"
+      Add_to_cart:       "加入购物车"
+    new:
+      New_product:       "新产品"
+      Back:              "返回"
+
+
   users:
     index:
       Listing_users:     "用户列表"

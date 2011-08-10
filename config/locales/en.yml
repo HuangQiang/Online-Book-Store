@@ -29,6 +29,9 @@ en:
       Orders:     "Orders"
       Products:   "Products"
       Users:      "Users"
+      Search:     "Search"
+      Manual_for_Administrator:   "Manual for Administrator"
+      Manual_for_User:            "Manual for User"
 
   store:
     index:
@@ -39,6 +42,11 @@ en:
       title:      "Your Cart"
       empty:      "Empty Cart"
       checkout:   "Checkout"
+      confirm:    "Are you sure"
+    show:
+      Empty_cart: "Empty cart"
+      confirm:    "Are you sure"
+      
       
   number:
     currency:
@@ -100,6 +108,12 @@ en:
     edit:
       Editing_product:  "Editing product"
       Show:             "Show"
+      Back:             "Back"
+    search:
+      result:           "Results of Search"
+      Add_to_cart:      "Add to cart"
+    new:
+      New_product:      "New product"
       Back:             "Back"
 
 

@@ -67,11 +67,23 @@
 				 <%= link_to t('.Products'),  products_path %><br />
 				 <%= link_to t('.Users'),     users_path    %><br />
 				 <br />
-				 
-				
-			  <% end %>
+			    <% end %>
+			    
+			    
+			    <a href="/Manual_for_Administrator.htm" target="_blank"><%= t('.Manual_for_Administrator')%></a><br>
+				<a href="/Manual_for_User.htm" target="_blank"><%= t('.Manual_for_User')%></a><br>
 			  
 			</div>
+			
+			<div id = "search">
+				<span style="text-align: right">
+  					<% form_tag "/products/search" do %>
+   					<%= text_field_tag :search_string %>
+   					<%= submit_tag t('.Search') %>
+  					<% end %>
+				</span>
+			</div>
+			
 			<div id="main">
 				<%= yield %>
 			</div>

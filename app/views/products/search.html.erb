@@ -1,0 +1,40 @@
+<h1><%= t('.result')+":"%></h1>
+
+	<% if @products%>
+		
+		<% for key_word in @key_words
+			for product in @products
+				converted_title=product.title.downcase+" "
+				if converted_title.include?key_word.downcase %>
+					
+					<div class="entry">
+						<%= image_tag(product.image_url) %>
+						
+						<h3>
+						<%non_key_words=converted_title.split(key_word.downcase) %>
+						<%= non_key_words[0]%>
+						
+						<%for i in 1..non_key_words.length-1 %>
+							<font color=red><%= key_word %></font>
+							<%= non_key_words[i] %>
+						<%end%>
+						</h3>	
+						
+						<%=sanitize product.description %>
+					
+						<div class="price_line">
+							<span class="price"><%= number_to_currency(product.price) %></span>
+							<%= button_to t('.Add_to_cart'), line_items_path(:product_id => product),
+							:remote => true %>
+						</div>
+					</div>
+				<%end
+			end 
+		end%>
+			
+	<% end %>
+	
+	<% hello="hello".split('e')
+		for i in hello %>
+			<p><%puts "hello"%><p>
+		<%end%>

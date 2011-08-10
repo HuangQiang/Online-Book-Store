@@ -176,8 +176,19 @@ TEXTAREA {
 #columns{
 	background:#096;	
 }
+
+/*Search*/
+#search
+{
+	float: right;
+	padding-right:30px;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 80%;
+}
+
 #main{
-	margin-left:20em;
+	margin-left:18em;
 	padding-top:4em;
 	padding-left:2em;
 	background:white;
@@ -198,7 +209,7 @@ TEXTAREA {
 {
 	float: right;
 	position:absolute;
-	background:#096;
+	background:red;
 	width:17%;
 	height: 30%;
 	left:1024px;

@@ -3,11 +3,14 @@ Depot::Application.routes.draw do
   
   controller :sessions do
     get 'login'  => :new
-	post 'login' => :create
-	delete 'logout' => :destroy
+	  post 'login' => :create
+	  delete 'logout' => :destroy
   end
   
   scope '(:locale)' do
+  
+  match 'products/search' => 'products#search'
+  
   resources :users
 
   resources :orders
