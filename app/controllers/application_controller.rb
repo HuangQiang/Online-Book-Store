@@ -16,8 +16,14 @@ class ApplicationController < ActionController::Base
 	protected
 	
 	  def authorize
-	    unless User.find_by_id(session[:user_id])
+	   #unless User.find_by_id(session[:user_id])
+		   #redirect_to login_url, :notice => "Please log in"
+		   if session[:user_id].blank?
+		   #@current_user = User.find_by_id(session[:user_id])
 		   redirect_to login_url, :notice => "Please log in"
+		   else
+		    #redirect_to login_url, :notice => "Please log in"
+			@current_user = User.find_by_id(session[:user_id])
 		end
 	  end
 	  

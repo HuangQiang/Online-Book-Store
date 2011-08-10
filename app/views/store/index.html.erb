@@ -1,3 +1,12 @@
+<h1><%= image_tag("good.jpg")%> Acquisition list</h1>
+<div class="entry">
+<marquee>
+<% @products.each do |product| %>
+	<div class="photo"><%= image_tag(product.image_url) %></div>
+<%  end %>
+</marquee>
+</div>
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>

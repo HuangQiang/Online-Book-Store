@@ -1,8 +1,6 @@
 Depot::Application.routes.draw do
-	
-
   get 'admin' => 'admin#index'
-    
+  
   controller :sessions do
     get 'login'  => :new
 	post 'login' => :create
@@ -10,10 +8,6 @@ Depot::Application.routes.draw do
   end
   
   scope '(:locale)' do
-  
-  #add the route of function search
-  match 'products/search' => 'products#search'
-  
   resources :users
 
   resources :orders
@@ -24,7 +18,6 @@ Depot::Application.routes.draw do
 
   resources :products do
      get :who_bought, :on => :member
-	 
   end
   
 

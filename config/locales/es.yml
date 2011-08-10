@@ -52,6 +52,10 @@ es:
       pay_prompt:   "Seleccione un m&eacute;todo de pago"
       submit:       "Realizar Pedido"
 
+  sessions:
+    new:
+      login:       "Bienvenido al inicio de sesión"
+      submit:      "Login"
   
   activerecord:
     models:

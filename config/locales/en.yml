@@ -21,13 +21,19 @@ en:
       questions:  "Questions"
       news:       "News"
       contact:    "Contact"
+      Logout:     "Logout"
+      login:      "Login"
+      register:   "Register"
+      newShop:    "NewShop"
+      Welcome:    "Welcome"
+      Orders:     "Orders"
+      Products:   "Products"
+      Users:      "Users"
 
   store:
     index:
       title_html:   "Your Pragmatic Catalog"
       add:          "Add to Cart"
-  
-    
   carts:
     cart:
       title:      "Your Cart"
@@ -53,8 +59,69 @@ en:
       pay_type:     "Pay with"
       pay_prompt:   "Select a payment method"
       submit:       "Place Order"
+    index:
+      ListOrder:      "Order List"
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Pay_type:       "Pay Type"
+      Show:           "Show"
+      Edit:           "Edit"
+      Destroy:        "Destroy"
+      New_Order:      "New Order"
+      confirm:        "Are you sure?"
+    show:
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Edit:           "Edit"
+      Back:           "Back"
+      Pay_type:       "Pay type"
+    edit:
+      Editing_order:  "Editing order"
+      Show:           "Show"
+      Back:           "Back"
 
-  
+  products:
+    index:
+      Listing_products: "Listing products"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_product:      "New product"
+    show:
+      Title:            "Title"
+      Description:      "Description"
+      Image_url:        "Image url"
+      Price:            "Price"
+      Edit:             "Edit"
+      Back:             "Back"
+    edit:
+      Editing_product:  "Editing product"
+      Show:             "Show"
+      Back:             "Back"
+
+
+  users:
+    index:
+      Listing_users:    "Listing users"
+      Name:             "Name"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_User:         "New User"
+    new:
+      New_user:         "New user"
+      Back:             "Back"
+
+
+  sessions:
+    new:
+      login:       "Welcome to login"
+      submit:      "Login"
+
   activerecord:
     models:
       order:      "order"

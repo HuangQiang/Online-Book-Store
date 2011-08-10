@@ -1,0 +1,140 @@
+
+ch:
+
+  layouts:
+    application:
+      title:     "网上书城"
+      home:      "主          页"
+      question:  "问          题"
+      news:      "新闻中心"
+      contact:   "联系我们"
+      Logout:    "登出"
+      login:     "登陆"
+      register:  "注册"
+      newShop:   "开店"
+      Welcome:   "欢迎登陆"
+      Orders:    "查看订单"
+      Products:  "查看商品"
+      Users:     "查看用户"
+
+  store:
+    index:
+      title_html:  "书籍列表"
+      add:         "加入购物车"
+
+  carts:
+    cart:
+      title:       "购物车"
+      empty:       "清空购物车"
+      checkout:    "进入结算中心"
+      Total:       "总计"
+
+  number:
+    currency:
+      format:
+        unit:       "￥"
+        precision:  2
+        separator:  "."
+        delimiter:  ","
+        format:     "%u%n"
+
+  orders:
+    new:
+      legend:       "请输入您的信息"
+    form:
+      name:         "姓名"
+      address:      "地址"
+      email:        "邮箱地址"
+      pay_type:     "付款方式"
+      pay_prompt:   "选择付款方式"
+      submit:       "提交订单"
+      checkout:     "dd"
+    index:
+      ListOrder:      "订单列表"
+      Name:           "姓名"
+      Address:        "地址"
+      Email:          "邮件地址"
+      Pay_type:       "付款方式"
+      Show:           "查看订单"
+      Edit:           "修改订单"
+      Destroy:        "删除订单"
+      New_Order:      "创建新订单"
+      confirm:        "确认删除？"
+    show:
+      Name:           "姓名"
+      Address:        "地址"
+      Email:          "邮件地址"
+      Edit:           "编辑"
+      Back:           "返回"
+      Pay_type:       "付款方式"
+    edit:
+      Editing_order:  "修改订单"
+      Show:           "查看订单"
+      Back:           "返回"
+
+  products:
+    index:
+      Listing_products:  "商品列表"
+      Show:              "详情"
+      Edit:              "编辑"
+      Destroy:           "删除"
+      confirm:           "确认删除？"
+      New_product:       "增加商品"
+    show:
+      Title:             "商品名称"
+      Description:       "商品描述"
+      Image_url:         "图片信息"
+      Price:             "商品价格"
+      Edit:              "编辑"
+      Back:              "返回"
+    edit:
+      Editing_product:   "编辑商品"
+      Show:              "查看详情"
+      Back:              "返回"      
+    _form:
+      title:             "名称"
+  users:
+    index:
+      Listing_users:     "用户列表"
+      Name:              "姓名"
+      Show:              "详情"
+      Edit:              "编辑"
+      Destroy:           "删除"
+      confirm:           "确认删除？"
+      New_User:          "增加用户"
+    new:
+      New_user:          "增加用户"
+      Back:              "返回"
+
+
+  sessions:
+    new:
+      login:          "欢迎登陆"
+      submit:         "登陆"
+      Name:           "用户名"
+      Password:       "密码" 
+
+
+  activerecord:
+    errors:
+      messages:
+        inclusion:  "列表中不存在"
+        blank:      "不能为空"
+  errors:
+    template:
+      body:         "存在以下问题"
+      header:
+        one:        "订单保存时出现一个错误"
+        other:      "订单保存时出现%{count}个错误"
+
+  activerecord:
+    models:
+      order:        "订单"
+    attributes:
+      order:
+        address:    "地址"
+        name:       "姓名"
+        email:      "邮件地址"
+        pay_type:   "付款方式"
+
+  thanks:           "您好!感谢您的订购!"    

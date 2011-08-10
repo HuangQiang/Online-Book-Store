@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t('.Title') + ":"%></b>
   <%= @product.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t('.Description')+":"%></b>
   <%= @product.description %>
 </p>
 
 <p>
-  <b>Image url:</b>
+  <b><%= t('.Image_url')+":"%></b>
   <%= @product.image_url %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b><%= t('.Price')+":"%></b>
   <%= @product.price %>
 </p>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('.Edit'), edit_product_path(@product) %> |
+<%= link_to t('.Back'), products_path %>

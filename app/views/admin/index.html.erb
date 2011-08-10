@@ -1,4 +1,7 @@
-<h1>Welcome</h1>
-
+<h1>Welcome :
+ <% unless @current_user.blank? %>
+<%= @current_user.name %>
+ <% end %>
+ </h1>
 It's <%= Time.now %>
 We have <%= pluralize(@total_orders, "order") %>.
