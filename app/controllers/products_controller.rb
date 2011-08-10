@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 		#search by each key word
 		for key_word in @key_words do
 			if @products
-				@products = @products + Product.find_by_sql("select * from products where title like '%"+key_word+"%'"+" or description like '%"+key_word+"%'")
+				@products = @products + Product.find_by_sql("select * from products where title like '%"+key_word+"%'")#+" or description like '%"+key_word+"%'")
 			else
 				@products = Product.find_by_sql("select * from products where title like '%"+key_word+"%'"+" or description like '%"+key_word+"%'")
 			end
