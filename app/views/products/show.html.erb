@@ -25,8 +25,10 @@
 <p>
   <span id="price"><%= number_to_currency(@product.price) %></span> 
  
+
   <%= button_to t('.Buy'), line_items_path(:product_id => @product),
      :remote => true %>	 
+
 </p>
 
 <div>

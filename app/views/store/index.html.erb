@@ -1,13 +1,13 @@
 
 <h1><%= image_tag("good.jpg")%> Acquisition list</h1>
+
 <div class="entry">
 <marquee>
 <% @products.each do |product| %>
-	<div class="photo"><%= image_tag(product.image_url) %></div>
+	<div class="photo"><%= link_to image_tag(product.image_url),  url_for(:controller => "products", :action => "show", :id => product.id) %></div>
 <%  end %>
 </marquee>
 </div>
-
 
 <% if notice %>
 <p id="notice"><%= notice %></p>
@@ -24,11 +24,14 @@
 	<h3>
 	<%= link_to "#{product.title}", url_for(:controller => "products", :action => "show", :id => product.id) %>
 	<% product.title %></h3>
-
-	<%=sanitize product.description %>
+	<h2><%= product.title %>
+	</h2>
+	
+	<%=sanitize truncate(strip_tags(product.description),
+                 :length => 80) %>
 	<div class="price_line">
-	<span class="price"><%= number_to_currency(product.price) %></span> 
-    <%= button_to t('.add').html_safe, line_items_path(:product_id => product),
+	<span class="price"><%= number_to_currency(product.price) %>&nbsp;&nbsp;&nbsp;</span> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= button_to t('.add').html_safe, line_items_path(:product_id => product),
      :remote => true %>
 	  
 	 </div>

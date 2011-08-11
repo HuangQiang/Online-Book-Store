@@ -56556,3 +56556,160 @@ Rendered carts/_cart.html.erb (0.0ms)
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66645096_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:79)
 Rendered products/show.html.erb within layouts/application (88.0ms)
 Completed 200 OK in 275ms (Views: 138.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Thu Aug 11 14:38:47 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "search_string"=>"ruby", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1[0m
+  [1m[35mProduct Load (1.0ms)[0m  select * from products where title like '%ruby%' or description like '%ruby%'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66196080_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/search.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 187ms (Views: 127.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 14:38:58 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/en
+Completed 302 Found in 3ms
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 14:38:58 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65997384_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 251ms (Views: 166.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 14:39:02 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66352644_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 253ms (Views: 175.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 14:39:05 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"ch", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 3ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 14:39:05 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66060420_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 237ms (Views: 165.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 14:39:24 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66236472_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 267ms (Views: 154.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/comments?locale=ch" for 127.0.0.1 at Thu Aug 11 14:40:01 +0800 2011
+  Processing by CommentsController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66550884_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered comments/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 168ms (Views: 137.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/comments/30/edit?locale=ch" for 127.0.0.1 at Thu Aug 11 14:40:04 +0800 2011
+  Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"30", "locale"=>"ch"}
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = 30 LIMIT 1
+Rendered comments/_form.html.erb (94.0ms)
+Rendered comments/edit.html.erb within layouts/application (139.0ms)
+Completed   in 255ms
+
+ActionView::Template::Error (undefined method `-' for "translation missing: ch.date.order":ActiveSupport::SafeBuffer):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :create_at %><br />
+    24:     <%= f.datetime_select :create_at %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_id %><br />
+  app/views/comments/_form.html.erb:24:in `_app_views_comments__form_html_erb__310615414_65677296_538102'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__310615414_65677296_538102'
+  app/views/comments/edit.html.erb:3:in `_app_views_comments_edit_html_erb___870211573_65687124_0'
+
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (38.0ms)
+
+
+Started POST "/logout?locale=ch" for 127.0.0.1 at Thu Aug 11 14:40:44 +0800 2011
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "locale"=>"ch"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 2ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 14:40:45 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 149 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 149)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65499036_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (184.0ms)
+Completed 200 OK in 297ms (Views: 229.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/comments/32/edit?locale=ch" for 127.0.0.1 at Thu Aug 11 14:45:59 +0800 2011
+  Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"32", "locale"=>"ch"}
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 32 LIMIT 1[0m
+Rendered comments/_form.html.erb (26.0ms)
+Rendered comments/edit.html.erb within layouts/application (35.0ms)
+Completed   in 120ms
+
+ActionView::Template::Error (undefined method `-' for "translation missing: ch.date.order":ActiveSupport::SafeBuffer):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :create_at %><br />
+    24:     <%= f.datetime_select :create_at %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_id %><br />
+  app/views/comments/_form.html.erb:24:in `_app_views_comments__form_html_erb__310615414_66242700_538102'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__310615414_66242700_538102'
+  app/views/comments/edit.html.erb:3:in `_app_views_comments_edit_html_erb___870211573_66254748_0'
+
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (34.0ms)
