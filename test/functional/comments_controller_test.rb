@@ -7,8 +7,9 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should get index" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:comments)
+   assert_response :success
+   assert_not_nil assigns(:comments)
+	
   end
 
   test "should get new" do
@@ -20,8 +21,8 @@ class CommentsControllerTest < ActionController::TestCase
     assert_difference('Comment.count') do
       post :create, :comment => @comment.attributes
     end
-
-    assert_redirected_to comment_path(assigns(:comment))
+	
+   assert_redirected_to :controller => "products", :action => "show", :id => @comment.product_id
   end
 
   test "should show comment" do
