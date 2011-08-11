@@ -7,7 +7,7 @@
 		<%= stylesheet_link_tag "scaffold" %>
 		<%= stylesheet_link_tag "depot", :media => "all" %>
 		<!-- END: stylesheet -->
-		
+		<%= javascript_include_tag "change" %>
 		<%= javascript_include_tag :defaults %>
 		<%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
 	</head>
@@ -84,6 +84,10 @@
   					<% end %>
 				</span>
 			</div>
+			
+			<!-- <div id = "Top">
+				
+			</div> -->
 			
 			<div id="main">
 				<%= yield %>

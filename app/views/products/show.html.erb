@@ -39,10 +39,11 @@
 <ul >
 <% @comments.each do | comment | %>
 	<li class="list_description">
-		<h4><%= t('.title')%></h4><%= comment.title %>
+		<h3><%= comment.title %></h3>
 		
-		<h4><%= t('.content')%></h4><p><%= comment.content %></p>
-		<h4><%= t('.Reply')%></h4><%= comment.create_at %>
+		<p><%= comment.content %></p>
+		<h4><%= t('Reply')%><%= comment.create_at %></h4>
+		<h1></h1>
 	</li>
 <% end %>
 </ul>

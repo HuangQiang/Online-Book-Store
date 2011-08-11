@@ -57466,3 +57466,1168 @@ Completed 200 OK in 363ms (Views: 177.0ms | ActiveRecord: 6.0ms)
   [1m[36mSQL (89.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110809052936')[0m
   [1m[35mSQL (88.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110809052937')
   [1m[36mSQL (88.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110809052938')[0m
+
+
+Started GET "/login" for 127.0.0.1 at Thu Aug 11 15:27:45 +0800 2011
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66587124_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered sessions/new.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 132ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 15:28:04 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"ch", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 6ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 15:28:05 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (3.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65338368_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (225.0ms)
+Completed 200 OK in 372ms (Views: 268.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 15:36:35 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65703228_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (172.0ms)
+Completed 200 OK in 283ms (Views: 218.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:36:45 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65506632_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (191.0ms)
+Completed 200 OK in 335ms (Views: 235.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:45:56 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65554560_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (333.0ms)
+Completed 200 OK in 475ms (Views: 391.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:47:44 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65565696_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 320ms (Views: 217.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/comments?locale=ch" for 127.0.0.1 at Thu Aug 11 15:48:11 +0800 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"title"=>"Try", "create_at"=>"Thu", "product_id"=>"5", "content"=>"123456!"}, "commit"=>"提交", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"ch"}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "comments" ("created_at", "create_at", "product_id", "content", "updated_at", "title") VALUES ('2011-08-11 07:48:11.552202', '2011-08-11 07:48:11.478198', 5, '123456!', '2011-08-11 07:48:11.552202', 'Try')
+Redirected to http://localhost:3000/ch/products/5
+Completed 302 Found in 236ms
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:48:11 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66143136_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 229ms (Views: 144.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:59:13 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66175932_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 256ms (Views: 155.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ch/products/5" for 127.0.0.1 at Thu Aug 11 15:59:14 +0800 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5", "locale"=>"ch"}
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 5 ORDER BY title LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = 5 ORDER BY created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66639708_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/show.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 440ms (Views: 171.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 15:59:18 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66369816_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (171.0ms)
+Completed 200 OK in 361ms (Views: 266.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 15:59:20 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66321504_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (152.0ms)
+Completed 200 OK in 437ms (Views: 314.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:00:49 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65219988_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (311.0ms)
+Completed 200 OK in 452ms (Views: 383.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:00:52 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (5.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66533736_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (196.0ms)
+Completed 200 OK in 512ms (Views: 373.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:00:53 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (2.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65358384_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (251.0ms)
+Completed 200 OK in 581ms (Views: 361.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:00:54 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65784672_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (194.0ms)
+Completed 200 OK in 346ms (Views: 263.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:00:56 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66001740_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (219.0ms)
+Completed 200 OK in 452ms (Views: 366.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:00:57 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (3.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66157368_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (168.0ms)
+Completed 200 OK in 477ms (Views: 334.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:00:59 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66093012_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (151.0ms)
+Completed 200 OK in 475ms (Views: 294.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:01:56 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66442620_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 251ms (Views: 185.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:01:57 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65337792_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 655ms (Views: 420.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:02:02 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65875368_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (168.0ms)
+Completed 200 OK in 306ms (Views: 237.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:02:05 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65975244_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (236.0ms)
+Completed 200 OK in 522ms (Views: 430.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:02:08 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66102396_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 277ms (Views: 198.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:02:09 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66049956_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (209.0ms)
+Completed 200 OK in 459ms (Views: 351.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 16:03:40 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"ch", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 2ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:03:40 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65832780_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (98.0ms)
+Completed 200 OK in 209ms (Views: 146.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:03:42 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66291408_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 324ms (Views: 258.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Thu Aug 11 16:04:03 +0800 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"搜索", "search_string"=>"ruby", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓"}
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mProduct Load (1.0ms)[0m  select * from products where title like '%ruby%' or description like '%ruby%'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66643140_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/search.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 260ms (Views: 138.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 16:04:11 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"ch", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 1ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:04:11 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66917328_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 305ms (Views: 162.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:04:12 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65491320_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (181.0ms)
+Completed 200 OK in 379ms (Views: 302.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:05:26 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65782224_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 266ms (Views: 213.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:05:28 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65825568_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (179.0ms)
+Completed 200 OK in 379ms (Views: 302.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:07:23 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65871696_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (162.0ms)
+Completed 200 OK in 292ms (Views: 216.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:07:25 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66000072_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (245.0ms)
+Completed 200 OK in 702ms (Views: 610.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:07:58 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66115260_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 212ms (Views: 151.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:08:00 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66088764_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (183.0ms)
+Completed 200 OK in 387ms (Views: 317.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:08:33 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66312408_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 260ms (Views: 169.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:08:35 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66193728_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (123.0ms)
+Completed 200 OK in 327ms (Views: 246.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:08:57 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66701724_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 331ms (Views: 182.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:08:59 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66280716_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (114.0ms)
+Completed 200 OK in 322ms (Views: 246.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:09:09 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (69.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_67012116_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (143.0ms)
+Completed 200 OK in 525ms (Views: 229.0ms | ActiveRecord: 71.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:09:11 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66418836_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (123.0ms)
+Completed 200 OK in 398ms (Views: 303.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:10:17 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65264988_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (173.0ms)
+Completed 200 OK in 281ms (Views: 218.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:10:19 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66798804_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 421ms (Views: 238.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:10:36 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (1.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65563236_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (197.0ms)
+Completed 200 OK in 315ms (Views: 240.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:10:37 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65487648_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 395ms (Views: 322.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:10:45 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (82.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65776440_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (266.0ms)
+Completed 200 OK in 401ms (Views: 328.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:10:46 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mCart Load (0.0ms)[0m  SELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)[0m
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65656956_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (246.0ms)
+Completed 200 OK in 455ms (Views: 380.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/ch/orders" for 127.0.0.1 at Thu Aug 11 16:11:02 +0800 2011
+  Processing by OrdersController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mOrder Load (4.0ms)[0m  SELECT "orders".* FROM "orders" ORDER BY created_at desc LIMIT 10 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "orders"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65983680_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered orders/index.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 208ms (Views: 159.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ch/products" for 127.0.0.1 at Thu Aug 11 16:11:06 +0800 2011
+  Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mProduct Load (1.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title, created_at desc LIMIT 3 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66428304_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered products/index.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 153ms (Views: 113.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ch/users" for 127.0.0.1 at Thu Aug 11 16:11:08 +0800 2011
+  Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" ORDER BY name
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65566968_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered users/index.html.erb within layouts/application (146.0ms)
+Completed 200 OK in 257ms (Views: 205.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/comments?locale=ch" for 127.0.0.1 at Thu Aug 11 16:11:11 +0800 2011
+  Processing by CommentsController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" ORDER BY created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66171360_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered comments/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 220ms (Views: 164.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:11:15 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66393024_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 257ms (Views: 188.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:11:15 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66774096_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 459ms (Views: 289.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:11:18 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65567376_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 415ms (Views: 335.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Aug 11 16:11:20 +0800 2011
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66036216_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 365ms (Views: 256.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:11:21 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66349188_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (115.0ms)
+Completed 200 OK in 289ms (Views: 231.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/en" for 127.0.0.1 at Thu Aug 11 16:11:24 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"ch", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"en"}
+Redirected to http://localhost:3000/ch
+Completed 302 Found in 4ms
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:11:24 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66939984_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (135.0ms)
+Completed 200 OK in 333ms (Views: 182.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:11:25 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65461860_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (205.0ms)
+Completed 200 OK in 406ms (Views: 328.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/ch" for 127.0.0.1 at Thu Aug 11 16:26:42 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"set_locale"=>"en", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"ch"}
+Redirected to http://localhost:3000/en
+Completed 302 Found in 2ms
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:26:42 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65446308_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (170.0ms)
+Completed 200 OK in 283ms (Views: 216.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:26:44 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65936172_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (177.0ms)
+Completed 200 OK in 386ms (Views: 311.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:31:42 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66101556_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 204ms (Views: 151.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:31:44 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66091872_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 330ms (Views: 260.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:31:51 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66346620_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 250ms (Views: 178.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:31:53 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66206244_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 394ms (Views: 292.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/ch" for 127.0.0.1 at Thu Aug 11 16:32:36 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66771996_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 290ms (Views: 153.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:32:38 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66319632_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 342ms (Views: 251.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:37:56 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65219184_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (169.0ms)
+Completed 200 OK in 273ms (Views: 214.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:37:58 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66561096_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 311ms (Views: 238.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:39:13 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65400564_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (186.0ms)
+Completed 200 OK in 314ms (Views: 231.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:39:15 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66963120_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 500ms (Views: 265.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:39:45 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65686884_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (249.0ms)
+Completed 200 OK in 447ms (Views: 328.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:39:48 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65549940_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (185.0ms)
+Completed 200 OK in 385ms (Views: 306.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:40:29 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65787816_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 209ms (Views: 147.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:40:31 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65957328_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (194.0ms)
+Completed 200 OK in 389ms (Views: 315.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:40:54 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66085788_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 248ms (Views: 179.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:40:55 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66059364_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (182.0ms)
+Completed 200 OK in 381ms (Views: 302.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:41:34 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66284388_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 218ms (Views: 155.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:41:36 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66192312_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 300ms (Views: 227.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:41:57 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66758340_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 292ms (Views: 156.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:41:58 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66388848_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 316ms (Views: 247.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:42:33 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65235276_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (177.0ms)
+Completed 200 OK in 294ms (Views: 223.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:42:35 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66586296_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 314ms (Views: 240.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:50:14 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65400180_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (181.0ms)
+Completed 200 OK in 295ms (Views: 227.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:50:17 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66969828_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (146.0ms)
+Completed 200 OK in 446ms (Views: 292.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/en" for 127.0.0.1 at Thu Aug 11 16:55:42 +0800 2011
+  Processing by StoreController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (1.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (1.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65692560_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (183.0ms)
+Completed 200 OK in 297ms (Views: 228.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/index_bg.png" for 127.0.0.1 at Thu Aug 11 16:55:44 +0800 2011
+  Processing by StoreController#index as 
+  Parameters: {"locale"=>"index_bg"}
+index_bg translation not available
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mCart Load (0.0ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE "carts"."id" = 150 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "line_items" WHERE ("line_items".cart_id = 150)
+Rendered carts/_cart.html.erb (2.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_65716728_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered store/index.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 402ms (Views: 327.0ms | ActiveRecord: 1.0ms)
