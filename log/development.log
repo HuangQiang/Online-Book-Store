@@ -56713,3 +56713,123 @@ ActionView::Template::Error (undefined method `-' for "translation missing: ch.d
 Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
 Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
 Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (34.0ms)
+
+
+Started GET "/comments?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:34 +0800 2011
+  Processing by CommentsController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mComment Load (2.0ms)[0m  SELECT "comments".* FROM "comments" ORDER BY created_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66874896_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered comments/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 126ms (Views: 99.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/comments/32/edit?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:39 +0800 2011
+  Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"32", "locale"=>"ch"}
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = 32 LIMIT 1
+Rendered comments/_form.html.erb (96.0ms)
+Rendered comments/edit.html.erb within layouts/application (108.0ms)
+Completed   in 204ms
+
+ActionView::Template::Error (undefined method `-' for "translation missing: ch.date.order":ActiveSupport::SafeBuffer):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :create_at %><br />
+    24:     <%= f.datetime_select :create_at %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_id %><br />
+  app/views/comments/_form.html.erb:24:in `_app_views_comments__form_html_erb__310615414_65833008_538102'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__310615414_65833008_538102'
+  app/views/comments/edit.html.erb:3:in `_app_views_comments_edit_html_erb___870211573_65840328_0'
+
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.0ms)
+
+
+Started GET "/login?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:46 +0800 2011
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"ch"}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66075288_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:54 +0800 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"Yu", "commit"=>"登陆", "authenticity_token"=>"JBIOO4uQB6dUm9yDJKKjQ5c6JSle91U0A9Y68QQIAIY=", "utf8"=>"✓", "locale"=>"ch", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'Yu' LIMIT 1[0m
+Redirected to http://localhost:3000/admin?locale=ch
+Completed 302 Found in 90ms
+
+
+Started GET "/admin?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:54 +0800 2011
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "orders"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66925404_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered admin/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 99ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments?locale=ch" for 127.0.0.1 at Thu Aug 11 14:53:57 +0800 2011
+  Processing by CommentsController#index as HTML
+  Parameters: {"locale"=>"ch"}
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" ORDER BY created_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___798677940_66111000_0 at d:/RubyProject/pull/app/views/layouts/application.html.erb:81)
+Rendered comments/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 155ms (Views: 129.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/comments/32/edit?locale=ch" for 127.0.0.1 at Thu Aug 11 14:54:00 +0800 2011
+  Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"32", "locale"=>"ch"}
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 32 LIMIT 1[0m
+Rendered comments/_form.html.erb (29.0ms)
+Rendered comments/edit.html.erb within layouts/application (40.0ms)
+Completed   in 120ms
+
+ActionView::Template::Error (undefined method `-' for "translation missing: ch.date.order":ActiveSupport::SafeBuffer):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :create_at %><br />
+    24:     <%= f.datetime_select :create_at %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_id %><br />
+  app/views/comments/_form.html.erb:24:in `_app_views_comments__form_html_erb__310615414_66562056_538102'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__310615414_66562056_538102'
+  app/views/comments/edit.html.erb:3:in `_app_views_comments_edit_html_erb___870211573_66576084_0'
+
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.0ms)
+
+
+Started GET "/comments/new?locale=ch" for 127.0.0.1 at Thu Aug 11 14:54:46 +0800 2011
+  Processing by CommentsController#new as HTML
+  Parameters: {"locale"=>"ch"}
+Rendered comments/_form.html.erb (88.0ms)
+Rendered comments/new.html.erb within layouts/application (99.0ms)
+Completed   in 163ms
+
+ActionView::Template::Error (undefined method `-' for "translation missing: ch.date.order":ActiveSupport::SafeBuffer):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :create_at %><br />
+    24:     <%= f.datetime_select :create_at %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_id %><br />
+  app/views/comments/_form.html.erb:24:in `_app_views_comments__form_html_erb__310615414_65579448_538102'
+  app/views/comments/_form.html.erb:1:in `_app_views_comments__form_html_erb__310615414_65579448_538102'
+  app/views/comments/new.html.erb:3:in `_app_views_comments_new_html_erb___499015792_65593572_0'
+  app/controllers/comments_controller.rb:31:in `new'
+
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered d:/Ruby187/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.0ms)
