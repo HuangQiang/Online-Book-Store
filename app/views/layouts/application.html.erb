@@ -29,7 +29,7 @@
 			<div class="locale">
 			<div id="frontcolor">
 			
-			  Welcome!
+			  <%= t('.Welcome') + "!"%>
 			
 				 
 				 <%=session[:user_name]%>
@@ -55,18 +55,16 @@
 				<a href="http://www..../faq"><%= image_tag("question.jpg")%><%= t('.question') %></a><br />
 				<a href="http://www..../news"><%= image_tag("cal.png")%><%= t('.news') %></a><br />
 				<a href="http://www..../contact"><%= image_tag("contact.jpg")%><%= t('.contact') %></a><br />
-				<a href="http://localhost:3000/login"><%= image_tag("user.png")%><%= t('.login') %></a><br />
-				<a href="http://localhost:3000/login"><%= image_tag("user.png")%><%= t('.register') %></a><br />
 				<a href="http://localhost:3000/login"><%= image_tag("buildings.png")%><%= t('.newShop') %></a><br />
-				<%= link_to 'Login', login_path %><br />
-				<%= link_to 'Register', new_user_path %>
+				<%= image_tag("user.png")%> <%= link_to t('.Login'), login_path %><br />
+				<%= image_tag("user.png")%> <%= link_to t('.Register'), new_user_path %><br /><br />
 				
 				<% if session[:user_name] %>
 				 <br />
 				 <%= link_to t('.Orders'),    orders_path   %><br />
 				 <%= link_to t('.Products'),  products_path %><br />
 				 <%= link_to t('.Users'),     users_path    %><br />
-				 <%= link_to 'Comment',   comments_path %><br />
+				 <%= link_to t('.Comment'),   comments_path %><br />
 				 <br />
 			    <% end %>
 			    

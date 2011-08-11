@@ -193,7 +193,9 @@ color: #44a;
 	float:left;}
 	
 #columns{
-	background:#096;	
+	background:#096;
+	height: 471px;
+	height: auto;
 }
 
 /*Search*/
@@ -308,15 +310,6 @@ color: #44a;
 
 .locale{
 	float: right;
-	padding-top: 0.2em
-}
-
-#right1 {
-float: right;
-	padding-top: 0.2em
-}
-#right2 {
-float: right;
 	padding-top: 0.2em
 }
 

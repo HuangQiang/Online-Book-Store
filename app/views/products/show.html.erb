@@ -5,15 +5,10 @@
  
 <p id="notice"><%= notice %></p>
 
-<div id="right1">
- <%= link_to 'Back', url_for(:controller => 'store', :action => 'index') %><br />
-   
-</div>
 
 <p>
  <%= image_tag @product.image_url %>
  
-  
 </p>
 
 <p>
@@ -30,27 +25,20 @@
 <p>
   <span id="price"><%= number_to_currency(@product.price) %></span> 
  
-  <%= button_to 'Add to cart', line_items_path(:product_id => @product),
-     :remote => true %>
-	<div id="right2">
-<button onclick="javascript:toExit('show','boysoft')">Comment</button>
-</div>
-	 
+  <%= button_to t('.Buy'), line_items_path(:product_id => @product),
+     :remote => true %>	 
 </p>
 
-
-
-
 <div>
-<h2>Comment:</h2>
+<h1><%= t('.Comment') + ":"%></h1>
 <div >
 <ul >
 <% @comments.each do | comment | %>
 	<li class="list_description">
-		<h3><%= comment.title %></h3>
+		<h3><%= t('.title') + ":"%></h3><h5><%= comment.title %></h5>
 		
-		<p><%= comment.content %></p>
-		<h4>Reply on :<%= comment.create_at %></h4>
+		<h3><%= t('.content')+":"%></h3><p><h5><%= comment.content %></h5></p>
+		<h4><%= t('.Reply')+":"%><%= comment.create_at %></h4>
 	</li>
 <% end %>
 </ul>
@@ -58,28 +46,16 @@
  </div>
 <br />
 
- <script language="javascript">
-ie4=(document.all)?true:false;
-ns4=(document.layers)?true:false;
-function toExit(){
-var args=toExit.arguments;
-var visible=args[0];
-if(ns4){
-        theObj=eval("document.layers[\'"+args[1]+"\']");
-        if(theObj)theObj.visibility=visible;
-        }
-else if(ie4){
-        if(visible=='show')visible='visible';
-        if(visible=='hide')visible='hidden';
-        theObj=eval("document.all[\'"+args[1]+"\']");
-        if(theObj)theObj.style.visibility=visible;
-        }
+<script language="javascript">
+
+function toExit(display,eleId){
+	if(display == "show") document.getElementById(eleId).style.visibility ='visible';  
+	if(display == "hide") document.getElementById(eleId).style.visibility = 'hidden';
 }
 </script>
- 
- 
+
  <div id=boysoft
-style="HEIGHT: 80px; LEFT: 309px; POSITION: absolute; Bottom: 0px; VISIBILITY: hidden; WIDTH: 180px; Z-INDEX: 1">
+style="HEIGHT: 470px; LEFT: 350px; POSITION: absolute; Bottom: 0px; VISIBILITY: hidden; WIDTH: 180px; Z-INDEX: 1">
 <table bgcolor=#356f66 border=1 cellpadding=0 cellspacing=0 height=400
   width=400>
   <tbody>
@@ -88,7 +64,7 @@ style="HEIGHT: 80px; LEFT: 309px; POSITION: absolute; Bottom: 0px; VISIBILITY: h
                           <table border=0 cellpadding=0 cellspacing=0 height=80 width="99%">
                             <tbody>
                             <tr>
-                              <td height=400 width=400> <font color=#ffffff><b><h3>Comment:</h3>
+                              <td height=400 width=400> <font color=#ffffff><b><h3><%= t('.Comment')+":"%></h3>
 
 <%= form_for @comment do |f| %>  
  
@@ -108,13 +84,13 @@ style="HEIGHT: 80px; LEFT: 309px; POSITION: absolute; Bottom: 0px; VISIBILITY: h
   <div class="actions">
 	<input type="hidden" name="comment[product_id]" id="comment_product_id" value=<%= "#{ @product.id }" %> />
 	
-    <%= f.submit('Comment') %>
+    <%= submit_tag t('.update') %>
   </div>
  <% end %>
  </b></font></td>
                             </tr>
                             <tr align="center">
-                              <td height=23 width="100%"><a href="javascript:toExit('hide','boysoft')"><font color=white>Closed</font></a></td>
+                              <td height=23 width="100%"><a href="javascript:toExit('hide','boysoft')"><font color=white><%= t('.Closed')%></font></a></td>
                             </tr>
                             </tbody>
                           </table>
@@ -123,9 +99,9 @@ style="HEIGHT: 80px; LEFT: 309px; POSITION: absolute; Bottom: 0px; VISIBILITY: h
                       </tbody>
                     </table>
                   </div>
-<button onclick="javascript:toExit('show','boysoft')">Comment</button>
+<button onclick="javascript:toExit('show','boysoft')"><%= t('.Comment')%></button>
 <br />
 <br />
 <br />
  
-<%= link_to 'Back', url_for(:controller => 'store', :action => 'index') %>
+<%= link_to t('.Back'), url_for(:controller => 'store', :action => 'index') %>

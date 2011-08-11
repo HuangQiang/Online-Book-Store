@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('.Name') + ":"%></b>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Hashed password:</b>
+  <b><%= t('.Hashed_password') + ":"%></b>
   <%= @user.hashed_password %>
 </p>
 
 <p>
-  <b>Salt:</b>
+  <b><%= t('.Salt') + ":"%></b>
   <%= @user.salt %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('.Edit'), edit_user_path(@user) %> |
+<%= link_to t('.Back'), users_path %>
