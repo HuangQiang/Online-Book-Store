@@ -48,6 +48,14 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    
+    #计数操作
+    current_cart.line_items.each do |item|
+      item.product.sale_num =0
+      item.product.sale_num += item.quantity
+      item.product.save
+    end
+    
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|

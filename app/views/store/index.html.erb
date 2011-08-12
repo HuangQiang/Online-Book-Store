@@ -60,6 +60,32 @@
 			</script>
 			</head>
 			<body>
+				
+				
+				<!--Top-->
+			<div id = "Top">
+				<div id = "sales">
+					<h2><%= t('.Bestsellers')%></h2>
+				</div>
+				<div id = "head"><%= t('.title')+":"%></div><br /><br />
+				
+					<% if @products_sale !=nil%>
+					<%@products_sale.each do |saled|%>
+					<!--<div class = "Picture">
+					<%=image_tag saled.image_url %>
+					</div>-->
+					<div id = "font">
+					<%=link_to saled.title,url_for(:controller => "products", :action => "show", :id => saled.id) %>
+					<!--<%=saled.sale_num%>-->
+					</div>
+					<br />
+					<%end%>
+					<%end%>
+				
+				
+			</div> 
+			
+				
 			 <div class="banner" id="banner">
 						<div class="banner_tab clearfix">
 							<ul>
