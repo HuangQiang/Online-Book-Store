@@ -1,0 +1,36 @@
+
+<h1><%= t('.ListOrder')%></h1>
+
+<table>
+  <tr>
+    <th><%= t('.Name')%></th>
+    <th><%= t('.Address')%></th>
+    <th><%= t('.Email')%></th>
+    <th><%= t('.Pay_type')%></th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+
+    <td><%= link_to t('.Show'), order %></td>
+    <td><%= link_to t('.Edit'), edit_order_path(order) %></td>
+    <td><%= link_to t('.Destroy'), order, :confirm => t('.confirm'), :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to t('.New_Order'), new_order_path %>
+
+<p><%= will_paginate @orders %></p>

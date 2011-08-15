@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <b><%= t('.Name') + ":"%></b>
+
+  <%= @order.name %>
+</p>
+
+<p>
+
+  <b><%= t('.Address') + ":"%></b>
+
+  <%= @order.address %>
+</p>
+
+<p>
+
+  <b><%= t('.Email') + ":"%></b>
+
+  <%= @order.email %>
+</p>
+
+<p>
+
+  <b><%= t('.Pay_type') + ":"%></b>
+
+  <%= @order.pay_type %>
+</p>
+
+
+
+<%= link_to t('.Edit'), edit_order_path(@order) %> |
+<%= link_to t('.Back'), orders_path %>
+

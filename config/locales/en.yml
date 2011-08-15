@@ -1,0 +1,230 @@
+
+en:
+  activerecord:
+    errors:
+      messages:
+        inclusion:  "is not include in the list"
+        blank:      "can't be blank"     
+  errors:
+    template:
+      body:     "There are problems with the following fields:"
+      header:
+        one:    "1 error prohibited this order from being saved"
+        other:  "%{count} errores prohibited this order from being saved"
+
+  hello: "Hello world"
+  
+  layouts:
+    application:
+      title:      "Pragmatic Bookshelf"
+      home:       "Home"
+      questions:  "Questions"
+      news:       "News"
+      contact:    "Contact"
+      Logout:     "Logout"
+      login:      "Login"
+      register:   "Register"
+      newShop:    "NewShop"
+      Login:      "Administrator Login"
+      Register:   "Administrator Register"
+      Welcome:    "Welcome"
+      Orders:     "Orders"
+      Products:   "Products"
+      Users:      "Users"
+      Search:     "Search"
+      Welcome:    "Welcome"
+      Comment:    "Comment"
+      Manual_for_Administrator:   "Manual for Administrator"
+      Manual_for_User:            "Manual for User"
+
+
+  store:
+    index:
+      title_html:   "Your Pragmatic Catalog"
+      add:          "Add to Cart"
+      Bestsellers:  "Bestsellers"
+      title:        "The top five books"
+
+  carts:
+    cart:
+      title:      "Your Cart"
+      empty:      "Empty Cart"
+      checkout:   "Checkout"
+      confirm:    "Are you sure"
+    show:
+      Empty_cart: "Empty cart"
+      confirm:    "Are you sure"
+          
+  number:
+    currency:
+      format:
+        unit:       "$"
+        precision:  2
+        separator:  "."
+        delimiter:  ","
+        format:     "%u%n"
+
+  orders:
+    new:
+      legend:       "Please Enter Your Details"
+    form:
+      name:         "Name"
+      address:      "Address"
+      email:        "E-mail"
+      pay_type:     "Pay with"
+      pay_prompt:   "Select a payment method"
+      submit:       "Place Order"
+    index:
+      ListOrder:      "Order List"
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Pay_type:       "Pay Type"
+      Show:           "Show"
+      Edit:           "Edit"
+      Destroy:        "Destroy"
+      New_Order:      "New Order"
+      confirm:        "Are you sure?"
+    show:
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Edit:           "Edit"
+      Back:           "Back"
+      Pay_type:       "Pay type"
+    edit:
+      Editing_order:  "Editing order"
+      Show:           "Show"
+      Back:           "Back"
+    index:
+      ListOrder:      "Order List"
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Pay_type:       "Pay Type"
+      Show:           "Show"
+      Edit:           "Edit"
+      Destroy:        "Destroy"
+      New_Order:      "New Order"
+      confirm:        "Are you sure?"
+    show:
+      Name:           "Name"
+      Address:        "Address"
+      Email:          "E-mail"
+      Edit:           "Edit"
+      Back:           "Back"
+      Pay_type:       "Pay type"
+    edit:
+      Editing_order:  "Editing order"
+      Show:           "Show"
+      Back:           "Back"
+
+  products:
+    index:
+      Listing_products: "Listing products"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_product:      "New product"
+    show:
+      Title:            "Title"
+      Description:      "Description"
+      Image_url:        "Image url"
+      Price:            "Price"
+      Edit:             "Edit"
+      Back:             "Back"
+      Buy:              "Add to cart"
+      Comment:          "Comment"
+      Back:             "Back"
+      Buy:              "Add to cart"
+      Comment:          "Comment"
+      Back:             "Back"
+      Reply:            "Reply on"
+      Closed:           "Closed"
+      update:           "Submit"
+      title:            "Title"
+      content:          "Content"
+    form:
+      submit:            "Submit"
+      title:             "Title"
+      description:       "description"
+      image_url:         "image_url"
+      price:             "price"
+    edit:
+      Editing_product:  "Editing product"
+      Show:             "Show"
+      Back:             "Back"
+    search:
+      result:           "Results of Search"
+      Add_to_cart:      "Add to cart"
+    new:
+      New_product:      "New product"
+      Back:             "Back"
+
+
+  users:
+    index:
+      Name:             "Name"
+      Show:             "Show"
+      Edit:             "Edit"
+      Destroy:          "Destroy"
+      confirm:          "Are you sure?"
+      New_User:         "New User"
+    new:
+      New_user:         "New user"
+      Back:             "Back"
+    edit:
+      Editing_user:     "Editing user"
+      Show:              "Show"
+      Back:              "Back"
+    show:
+      Name:              "Name"
+      Hashed_password:   "Hashed password"
+      Salt:              "Salt"
+      Edit:              "Edit"
+      Back:              "Back"
+    form:
+      detail:           "Enter user details"
+      name:             "Name"
+      password:         "Password"
+      password_confirmation:    "Confirm"
+      Update:           "Create User"
+
+  comments:
+    edit:
+      Editing_comment:   "Editing comment"
+      Show:              "Show"
+      Back:              "Back"
+    index:
+      Listing_comments:  "Comments List"
+      Title:             "Title"
+      Content:           "Content"
+      Show:              "Show"
+      Edit:              "Edit"
+      Destroy:           "Destroy"
+      New_Comment:       "New Comment"
+      confirm:           "Are you sure?"
+    show:
+      Title:             "Title"
+      Content:           "Content"
+      Product:           "Product"
+      Edit:              "Edit"
+      Back:              "Back"
+
+  sessions:
+    new:
+      login:       "Welcome to login"
+      submit:      "Login"
+
+  activerecord:
+    models:
+      order:      "order"
+    attributes:
+      order:
+        address:  "Address"
+        name:     "Name"
+        email:    "E-mail"
+        pay_type: "pay_type"
+        
+  thanks:       "Thank you for your order"

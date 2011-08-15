@@ -1,0 +1,120 @@
+
+ <meta http-equiv="content-Type" content="text/html;charset=gb2312">
+
+ 
+<p id="notice"><%= notice %></p>
+
+
+<p>
+ <%= image_tag @product.image_url %>
+ 
+  
+</p>
+
+<p>
+
+ <h2> <%= @product.title %></h2>
+ 
+</p>
+
+<p>
+  <%= sanitize @product.description %>
+ 
+</p>
+ 
+<p>
+  <span id="price"><%= number_to_currency(@product.price) %></span> 
+ 
+  <%= button_to t('.Buy'), line_items_path(:product_id => @product),
+     :remote => true %>
+	 
+</p>
+
+
+
+
+<div>
+<h1><%= t('.Comment')%></h1>
+<div >
+<ul >
+<% @comments.each do | comment | %>
+	<li class="list_description">
+		<h3><%= comment.title %></h3>
+		
+		<p><%= comment.content %></p>
+		<h4><%= t('Reply')%><%= comment.create_at %></h4>
+		<h1></h1>
+	</li>
+<% end %>
+</ul>
+ <%= will_paginate @comments %>
+ </div>
+<br />
+
+ <script language="javascript">
+
+function toExit(display,eleId){
+	if(display == "show") document.getElementById(eleId).style.visibility ='visible';  
+	if(display == "hide") document.getElementById(eleId).style.visibility = 'hidden';
+}
+</script>
+
+ 
+ 
+ <div id=boysoft
+style="HEIGHT: 450px; LEFT:430px; POSITION: absolute; Bottom: 0px; VISIBILITY: hidden; WIDTH: 180px; Z-INDEX: 1">
+<table bgcolor=#356f66 border=1 cellpadding=0 cellspacing=0 height=400
+  width=180>
+  <tbody>
+                      <tr>
+                        <td height=400 width="100%">
+                          <table border=0 cellpadding=0 cellspacing=0 height=80 width="99%">
+                            <tbody>
+                            <tr>
+                              <td height=400> <font color=#ffffff><b><h3><%= t('.Comment')+":"%></h3>
+
+<%= form_for @comment do |f| %>  
+ 
+ 
+  <div class="field">
+    <%= f.label t('.Title') %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label t('.Content') %><br />
+    <%= f.text_area :content %>
+	</div>
+  <div class="action">
+   <input type="hidden" name="comment[create_at]" id="comment_create_at" value=<%= Time.now %> />
+	
+  </div>
+  <div class="actions">
+	<input type="hidden" name="comment[product_id]" id="comment_product_id" value=<%= "#{ @product.id }" %> />
+	
+    <%= submit_tag t('.update') %>
+  </div>
+ <% end %>
+ </b></font></td>
+                            </tr>
+                            <tr align="center">
+                              <td height=23 width="100%"><a href="javascript:toExit('hide','boysoft')"><font color=white><%= t('.Closed')%></font></a></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+				  <% if session[:user_id]%>
+				  
+				  < button onclick="javascript:toExit('show','boysoft')"><%= t('.Comment')%></button>
+
+<%end%>
+
+<br />
+<br />
+<br />
+ 
+<%= link_to t('.Back'), url_for(:controller => 'store', :action => 'index') %>
