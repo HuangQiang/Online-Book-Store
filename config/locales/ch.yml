@@ -12,6 +12,8 @@ ch:
       Login:     "登陆"
       Register:  "注册"
       newShop:   "开店"
+      Login:     "管理员登陆"
+      Register:  "管理员注册"
       Welcome:   "欢迎登陆"
       Orders:    "查看订单"
       Products:  "查看商品"
@@ -26,6 +28,8 @@ ch:
     index:
       title_html:  "书籍列表"
       add:         "加入购物车"
+      Bestsellers: "畅销排行榜"
+      title:       "前5名书籍"
 
   carts:
     cart:

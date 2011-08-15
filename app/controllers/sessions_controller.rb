@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_filter :authorize
   def new
+
     respond_to do |format|
       format.html
     end
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
     session[:user_name]=nil
     session[:user_type]=nil
     redirect_to store_url,:notice=>I18n.t('.logout_notice')
+
   end
 
 end

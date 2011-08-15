@@ -208,17 +208,53 @@ color: #44a;
 	margin-left: 80%;
 }
 
-/*Top
+/*Top*/
 #Top
 {
 	float: right;
-	background-color: yellow;
-	margin-top: 130px;
+	background:white;
+	margin-top: 50px;
 	margin-right: 20px;
-    margin-left: 78%;
+    margin-left: 59%;
     position: absolute;
-    height: 525px;
-    width: 260px;
+    height: 330px;
+    width: 220px;
+    padding-left: 2px;
+}
+#sales
+{
+	margin-top: 4px;
+	color: #E87912;
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial, Helvetica,"宋体", sans-serif;
+}
+#head
+{
+	float: left;
+	color: #000000;
+	font-size: 18px;
+	margin-left: 2px;
+	margin-top: 20px;
+}
+#font
+{
+	float: left;
+	font-size: 15px;
+	color:#bfb;
+	margin-top: 30px;
+	margin-left: 8px;
+}
+.tr{
+	height: 330px;
+    width: 220px;
+    background: red;
+}
+/*.Picture
+{
+	float: left;
+	width: 20px;
+	height: 25px;
 }*/
 
 #main{

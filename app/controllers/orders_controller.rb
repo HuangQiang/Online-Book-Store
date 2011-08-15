@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
-  skip_before_filter :authorize,  :only => [:new,:create]
+
+  skip_before_filter :authorize,:only => [:new,:create]
+
   def index
 #    @orders = Order.all
     @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',:per_page =>10
@@ -30,12 +32,16 @@ class OrdersController < ApplicationController
         redirect_to store_url,:notice => "Your cart is empty"
         return
     end
+
       if session[:user_type]==2 || session[:user_type]==1
         @order = Order.new
 	  else 
 	    redirect_to login_url,:notice => "please login before you buy"
     end
   
+
+    
+   
   end
 
   # GET /orders/1/edit
@@ -47,6 +53,16 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+
+    
+    #计数操作
+    current_cart.line_items.each do |item|
+      item.product.sale_num =0
+      item.product.sale_num += item.quantity
+      item.product.save
+    end
+    
+
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|

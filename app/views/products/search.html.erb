@@ -11,8 +11,14 @@
 					<%=link_to image_tag(product.image_url), url_for(:controller => "products", :action => "show", :id => product.id) %>
 						
 						
+
 					
-					<h3>
+				
+
+					<h3><%= link_to "#{product.title}", url_for(:controller => "products", :action => "show", :id => product.id) %>
+	               <% product.title %></h3>
+					<h2>
+
 					  
 						<%non_key_words=converted_title.split(key_word.downcase) %>
 						<%= non_key_words[0]%>
@@ -23,7 +29,11 @@
 						<% end %>
 						
 
-					</h3>
+
+					
+
+						</h2>
+
 						
 						<%=sanitize product.description %>
 					

@@ -25,6 +25,8 @@ en:
       login:      "Login"
       register:   "Register"
       newShop:    "NewShop"
+      Login:      "Administrator Login"
+      Register:   "Administrator Register"
       Welcome:    "Welcome"
       Orders:     "Orders"
       Products:   "Products"
@@ -40,6 +42,8 @@ en:
     index:
       title_html:   "Your Pragmatic Catalog"
       add:          "Add to Cart"
+      Bestsellers:  "Bestsellers"
+      title:        "The top five books"
 
   carts:
     cart:

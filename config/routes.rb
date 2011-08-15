@@ -1,8 +1,5 @@
 Depot::Application.routes.draw do
 
-  get "account/reg"
-
-  get "account/login"
 
   resources :comments
 
