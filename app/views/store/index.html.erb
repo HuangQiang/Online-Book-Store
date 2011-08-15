@@ -68,6 +68,7 @@
 				<div id = "sales">
 					<h2><%= t('.Bestsellers')%></h2>
 				</div>
+
 				<div id = "head"><%= t('.title')+":"%></div><br />
 				<br />
 				<br />
@@ -81,6 +82,7 @@
 	               <%= link_to "#{saled.title}", url_for(:controller => "products", :action => "show", :id => saled.id) %>
 	                <% saled.title %></h3>
 	                <h2><%= saled.title %>
+
 					<!--<%=saled.sale_num%>-->
 					</div>
 					<br />
