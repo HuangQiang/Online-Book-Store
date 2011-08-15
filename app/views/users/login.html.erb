@@ -1,0 +1,23 @@
+<div class="depot_form">
+<% form_for :customer, @customer, :url => { :action => "pro_login"} do |f|%>
+
+   <div class="content">
+   <fieldset>
+    <legend> login page </legend>
+    <b> <label for="user_name"> customerName:</label></b>
+	 <%= f.text_field :name, :class=>"input", :size => 30 %>
+   </p>
+   
+   <p>
+    <b> <label for="user_pass"> password:</label> </b>
+	 <%= f.password_field :pass, :class=>"input", :size => 30%>
+   </p>
+   
+
+	 <%= submit_tag("login", :class => "input")%>
+   </p>
+   </fieldset>
+   <div>
+   
+   <%end%>
+    </div>

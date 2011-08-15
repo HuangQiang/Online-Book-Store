@@ -1,0 +1,32 @@
+<div class="depot_form">
+<% form_for :customer, @customer, :url => { :action => "pro_regist"} do |f|%>
+
+   <div class="content">
+   <fieldset>
+   <p>
+    <b> <label for="user_name"> customerName:</label></b>
+	 <%= f.text_field :name, :class=>"input", :size => 30 %>
+   </p>
+   
+   <p>
+    <b> <label for="user_pass"> password:</label> </b>
+	 <%= f.password_field :pass, :class=>"input", :size => 30%>
+   </p>
+   
+    <p>
+    <b> <label for="user_pass1"> passwordConfirm: </label></b>
+	 <%= f.password_field :pass1, :class=>"input", :size => 30%>
+   </p>
+   
+    <p>
+    <b> <label for="user_email"> email: </label> </b>
+	 <%= f.text_field :email, :class=>"input", :size => 30%>
+	 <span id="checkmail">must input available email</span> </p>
+	<p>
+	 <%= submit_tag("create user_account", :class => "input")%>
+   </p>
+   </fieldset>
+   <div>
+   
+   <%end%>
+    </div>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('.Title') + ":"%></b>
+  <%= @comment.title %>
+</p>
+
+<p>
+  <b><%= t('.Content') + ":"%></b>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <b>create at</b>
+  <%= @comment.create_at %>
+</p>
+
+<p>
+  <b><%= t('.Product') + ":"%></b>
+  <%= @comment.product_id %>
+</p>
+
+
+<%= link_to t('.Edit'), edit_comment_path(@comment) %> |
+<%= link_to t('.Back'), comments_path %>
