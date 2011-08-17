@@ -1,0 +1,32 @@
+<h1><%= t('.Listing_comments')%></h1>
+
+<table>
+  <tr>
+    <th><%= t('.Title')%></th>
+    <th><%= t('.Content')%></th>
+    <th>create at </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.title %></td>
+    <td><%= comment.content %></td>
+    <td><%= comment.create_at %></td>
+    <td><%= comment.product_id %></td>
+    <td><%= link_to t('.Show'), comment %></td>
+    <td><%= link_to t('.Edit'), edit_comment_path(comment) %></td>
+    <td><%= link_to t('.Destroy'), comment, :confirm => t('.confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('.New_Comment'), new_comment_path %>
+<br />
+<br />
+
+<%= will_paginate @comments %>
